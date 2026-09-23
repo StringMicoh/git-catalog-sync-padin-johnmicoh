@@ -9,6 +9,10 @@ function calculateLateFee(daysLate, ratePerDay) {
 
   let fee = Math.round(daysLate * ratePerDay);
 
+  if (fee < 1) {
+    fee = 1;
+  }
+
   if (fee > 20) {
     fee = 20;
   }
